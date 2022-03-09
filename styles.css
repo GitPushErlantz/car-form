@@ -1,0 +1,38 @@
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	width: 1200px;
+	background-color: rgb(17, 17, 17);
+	align-self: center;
+	color: white;
+	padding: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+	background-color: #2c2c2c;
+	border: solid transparent 3px;
+	font-size: 20px;
+	color: white;
+	padding: 5px;
+	margin-bottom: 10px;
+	border-radius: 7px;
+}
+
+input:focus {
+	border: solid #6200ff 3px;
+	outline: none;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+h2 {
+	margin-bottom: 10px;
+}
