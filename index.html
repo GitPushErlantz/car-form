@@ -5,25 +5,104 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Car form</title>
 		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<!--FONTS-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<div class="main">
 			<h1>Car form</h1>
-			<form>
-				<h2>First name:</h2>
-				<input type="text" id="fname" name="fname" /><br />
-				<h2>Last name:</h2>
-				<input type="text" id="lname" name="lname" /><br />
-				<h2>Password:</h2>
-				<input type="password" id="pass" name="pass" /><br />
-				<h2>Select your preferred color:</h2>
+			<h3>
+				Congratulations! You have the chance to win a car! Just fill out this
+				form below.
+			</h3>
+			<form action="sent.php" method="post">
+				<!--TEXT-->
+				<h2>First name:*</h2>
+				<input type="text" id="fname" name="fname" required /><br />
+				<h2>Last name:*</h2>
+				<input type="text" id="lname" name="lname" required /><br />
+				<h2>E-mail:*</h2>
+				<input type="email" id="email" name="email" required /><br />
+				<!--PASSWORD-->
+				<h2>Password:*</h2>
+				<input type="password" id="pass" name="pass" required /><br />
+				<!--RADIO-->
+				<h2>Select your preferred color:*</h2>
 				<br />
-				<input type="radio" id="red" name="color" value="Red" />
+				<input type="radio" id="red" name="color" value="red" required />
 				Red<br />
-				<input type="radio" id="blue" name="color" value="Blue" />
+				<input type="radio" id="blue" name="color" value="blue" required />
 				Blue<br />
-				<input type="radio" id="green" name="color" value="Green" />
+				<input type="radio" id="green" name="color" value="green" required />
 				Green<br />
+				<!--SLIDER-->
+				<h2>What's the maximum you're willing to pay for a car?</h2>
+				<!--I copied and pasted this from a shady website-->
+				<input
+					type="range"
+					name="price"
+					id="price"
+					min="4000"
+					max="40000"
+					step="500"
+					value="8000"
+				/>
+				<!--This should show the number-->
+				<span id="demo"></span>
+				<!--JS I copied and pasted from w3schools-->
+				<script src="slider.js"></script>
+				<br />
+				<!--TEXT-->
+				<h2>Favorite car brand</h2>
+				<input type="text" id="brand" name="brand" /><br />
+				<!--CHECKBOXES-->
+				<h2>What are the essential features for you in a car?</h2>
+				<input type="checkbox" id="essentials1" name="essentials1" value="AC" />
+				<label for="essentials1"> AC </label><br />
+				<input
+					type="checkbox"
+					id="essentials2"
+					name="essentials2"
+					value="Smart"
+				/>
+				<label for="essentials2"> Apple Carplay / Android Auto </label><br />
+				<input
+					type="checkbox"
+					id="essentials3"
+					name="essentials3"
+					value="Automatic"
+				/>
+				<label for="essentials3"> Automatic engine (not a manual car)</label>
+				<br />
+				<h2>Please accept our terms and conditions</h2>
+				<input
+					type="checkbox"
+					id="terms"
+					name="terms"
+					value="accept"
+					required
+				/>
+				<label for="accept">
+					I accept the terms and conditions and the fact that my data is going
+					to be shared with everybody and their dog (required)</label
+				><br />
+				<input
+					type="checkbox"
+					id="newsletter"
+					name="newsletter"
+					value="subscribed"
+				/>
+				<label for="newsletter">
+					We will send you news and promotions, check this box if you don't want
+					to receive them</label
+				><br /><br />
+				<button class="send" type="submit">Submit</button>
+				<button class="clear" type="reset">Clear</button>
 			</form>
 		</div>
 	</body>
